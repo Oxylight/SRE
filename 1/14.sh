@@ -1,6 +1,6 @@
-user=admini
-host=${1}
-folder=${2}
+user=${1}
+host=${2}
+folder=${3}
 
 #create logs
 for i in {1..5}; do
