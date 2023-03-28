@@ -1,6 +1,5 @@
-user=${1}
-host=${2}
-folder=${3}
+user=admini
+host=${1}
 
 #create logs
 for i in {1..5}; do
@@ -9,7 +8,7 @@ for i in {1..5}; do
 done
 
 #send logs to another host
-scp /var/log/vk-sre-*.log ${user}@${host}:${folder}
+scp /var/log/vk-sre-*.log admini@${host}:/var/log/
 
 #delete old logs
-ssh ${user}@${host} find ${folder} -type f -name "vk-sre-*.log" -mtime +7 -delete
+ssh admini@${host} find /var/log/ -type f -name "vk-sre-*.log" -mtime +7 -delete
